@@ -1,0 +1,18 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <ItemGroup>
+        <Compile Remove="**\CVS\*"/>
+        <EmbeddedResource Remove="**\CVS\*"/>
+        <None Remove="**\CVS\*"/>
+    </ItemGroup>
+    <Target Name="PostBuild_RecipeCopier" AfterTargets="Build" Condition="'$(Configuration)|$(Platform)'=='Shipping|x64'">
+        <!--        <Copy SourceFiles="..\..\Binaries\Win64\UE4-RecipeCopier-Win64-Shipping.dll" DestinationFolder="C:\Games\Epic Games\SatisfactoryEarlyAccess\mods"/>-->
+        <!--        <Copy SourceFiles="..\..\Binaries\Win64\UE4-RecipeCopier-Win64-Shipping.pdb" DestinationFolder="C:\Games\Epic Games\SatisfactoryEarlyAccess\mods"/>-->
+        <!--        <Copy SourceFiles="..\..\Binaries\Win64\UE4-RecipeCopier-Win64-Shipping.dll" DestinationFolder="..\..\Mods\RecipeCopier"/>-->
+        <!--        <Copy SourceFiles="..\..\Binaries\Win64\UE4-RecipeCopier-Win64-Shipping.pdb" DestinationFolder="..\..\Mods\RecipeCopier"/>-->
+
+        <Exec Command="..\..\combine.cmd"/>
+
+        <Delete Files="..\..\Mods\RecipeCopier.zip"/>
+        <ZipDirectory SourceDirectory="..\..\Mods\RecipeCopier" DestinationFile="..\..\Mods\RecipeCopier.zip"/>
+    </Target>
+</Project>
