@@ -1,5 +1,14 @@
-﻿
-Copy Icon from icons8.com
+﻿=== Recipe Copier
+
+=== Developer ===
+Marcio Neves
+
+=== UI ===
+Multiplayer banner and icon by Deantendo#4265 (find him at Satisfactory Modding Discord server)
+Icons from icons8.com
+
+
+=== SML
 
 === SML Developers ===
 Anttirt
