@@ -1,8 +1,8 @@
 pushd "%~dp0\Mods\RecipeCopier"
 
-copy /y ..\..\Content\RecipeCopier\Icons\RecipeCopier-Logo.jpg RecipeCopier-Logo.jpg
+copy /y ..\..\Content\RecipeCopier\Icons\RecipeCopier-Logo2.png RecipeCopier-Logo2.png
 
-echo {"resources"^:{"icon"^:"RecipeCopier-Logo.jpg"}} > "resources.json"
+echo {"resources"^:{"icon"^:"RecipeCopier-Logo2.png"}} > "resources.json"
 
 jq --tab -s ".[0] * .[1]" "data.json" "resources.json" > "data-fixed.json"
 
